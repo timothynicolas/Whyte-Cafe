@@ -2,7 +2,9 @@
 
 .container {
   padding-inline: 2.25rem;
-  padding-block: 0.5rem;
+  padding-block: 1rem;
+  max-width: 90rem; /* 1440px */
+  margin-inline: auto;
 }
 
 * {
@@ -11,6 +13,34 @@
   box-sizing: border-box;
 }
 
+/* === 368px === */
 @media (min-width: 23rem) {
-  /* 368px */
+}
+/* === 640px === */
+@media (min-width: 40rem) {
+}
+
+/* === 768px === */
+@media (min-width: 48rem) {
+  .container {
+    padding-inline: 4rem;
+  }
+}
+
+/* === 1024px === */
+@media (min-width: 64rem) {
+}
+
+/* === 1280px === */
+@media (min-width: 80rem) {
+  .container {
+    padding-inline: 6rem;
+  }
+}
+
+/* === 1536px === */
+@media (min-width: 96rem) {
+  .container {
+    padding-inline: 6rem;
+  }
 }
