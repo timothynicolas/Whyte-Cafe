@@ -1,12 +1,10 @@
-
-
 import { Navbar } from "../../components/navbar/Navbar";
 
-export function Home() {
+export function Menu() {
   return (
     <div className="container" >
       <Navbar />
-      <h1>HOME</h1>
+      <h1>MENU</h1>
     </div>
   );
 }
