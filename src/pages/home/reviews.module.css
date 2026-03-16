@@ -1,0 +1,8 @@
+.header {
+  font-family: "DM Sans";
+  font-size: 1.728rem;
+  font-size: clamp(1.728rem, 1.4736rem + 1.272vw, 3rem);
+  font-weight: 900;
+  color: #231f20;
+  /* background-color: rgba(0, 255, 0, 0.2); */
+}
