@@ -1,10 +1,11 @@
 import "./home.css";
 
 import { Navbar } from "../../components/navbar/Navbar";
-import { LatestCreation } from "./LatestCreation";
-import { WhyteSpecials } from "./WhyteSpecials";
-import { Reviews } from "./Reviews";
-import { Events } from "./Events";
+import { LatestCreation } from "./LatestCreation/LatestCreation";
+import { WhyteSpecials } from "./WhyteSpecials/WhyteSpecials";
+import { Reviews } from "./Reviews/Reviews";
+import { Events } from "./Events/Events";
+import { StoreHours } from "./StoreHours/StoreHours";
 
 export function Home() {
   return (
@@ -12,8 +13,9 @@ export function Home() {
       <Navbar />
       <LatestCreation />
       <WhyteSpecials />
-      {/* <Reviews /> */}
+      <Reviews />
       <Events />
+      <StoreHours />
     </div>
   );
 }

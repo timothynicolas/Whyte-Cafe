@@ -1,11 +1,11 @@
 import styles from "./whyte-specials.module.css";
 
-import product1 from "../../assets/sample-products/product4.png";
-import product2 from "../../assets/sample-products/product5.png";
-import product3 from "../../assets/sample-products/product6.png";
-import product4 from "../../assets/sample-products/product7.png";
+import product1 from "../../../assets/sample-products/product4.png";
+import product2 from "../../../assets/sample-products/product5.png";
+import product3 from "../../../assets/sample-products/product6.png";
+import product4 from "../../../assets/sample-products/product7.png";
 
-import arrow from "./assets/arrow.svg";
+import arrow from "../assets/arrow.svg";
 
 export function WhyteSpecials() {
   return (

@@ -1,9 +1,9 @@
-import styles from "./events.module.css";
+import styles from './events.module.css'
 
-import event1 from "./assets/event1.png";
-import event2 from "./assets/event2.png";
-import arrow from "./assets/arrow.svg";
-import clockSvg from "./assets/clock.svg";
+import event1 from "../assets/event1.png";
+import event2 from "../assets/event2.png";
+import arrow from "../assets/arrow.svg";
+import clockSvg from "../assets/clock.svg";
 
 export function Events() {
   return (
@@ -38,7 +38,10 @@ export function Events() {
             <div className={styles.eventDetails}>
               <p className={styles.eventTitle}>TGIF: Drinks on Us!</p>
               <p className={styles.eventDesc}>
-                Celebrate Fridays with your friends at Whyte Café! For every 3 drinks ordered in a single transaction, you’ll get 1 drink free. Gather your crew, sip, and make your weekend start right — available every Friday from 5 PM - 10 PM.
+                Celebrate Fridays with your friends at Whyte Café! For every 3
+                drinks ordered in a single transaction, you’ll get 1 drink free.
+                Gather your crew, sip, and make your weekend start right —
+                available every Friday from 5 PM - 10 PM.
               </p>
               <div className={styles.eventDuration}>
                 <img src={clockSvg} />
@@ -50,7 +53,6 @@ export function Events() {
             </button>
           </div>
         </div>
-        
       </div>
     </div>
   );

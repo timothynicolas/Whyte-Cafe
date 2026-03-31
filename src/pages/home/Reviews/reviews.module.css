@@ -1,0 +1,84 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.header {
+  font-family: "DM Sans";
+  font-size: 1.728rem;
+  font-size: clamp(1.728rem, 1.4736rem + 1.272vw, 3rem);
+  font-weight: 900;
+  color: #231f20;
+}
+
+.cardsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.reviewCard {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 0.75rem;
+  border: 1px solid #e4e4e4;
+  padding: 1rem;
+  gap: 1.25rem;
+}
+
+.reviewHeader {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  /* background-color: red; */
+}
+
+.name {
+  font-weight: 700;
+}
+
+.comment {
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.imgContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+.img {
+  width: 100%;
+  height: auto;
+}
+
+/* 368px */
+@media (min-width: 23rem) {
+}
+/* 640px */
+@media (min-width: 40rem) {
+  .cardsContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* 768px */
+@media (min-width: 48rem) {
+}
+
+/* 1024px */
+@media (min-width: 64rem) {
+  .cardsContainer {
+    grid-template-columns: 1fr 1fr  1fr;
+  }
+}
+
+/* 1280px */
+@media (min-width: 80rem) {
+}
+
+/* 1536px */
+@media (min-width: 96rem) {
+}
