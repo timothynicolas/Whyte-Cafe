@@ -19,11 +19,13 @@
   font-weight: 900;
   color: #231f20;
   /* background-color: rgba(0, 255, 0, 0.2); */
+  cursor: default;
 }
 
 .subheader {
   display: none;
   font-size: 1.725rem;
+  cursor: default;
 }
 
 .latestCreationCard {
@@ -41,7 +43,7 @@
 }
 
 .latestCreationCard:hover {
-  border: 1px solid #231f20;
+  border: 1px solid #a4a4a4;
 }
 
 .latestCreationCard img {
@@ -173,9 +175,8 @@
   transition: all 0.3s ease;
 }
 
-.view-more-btn:hover {
-  background-color: #e0e0e0;
-  color: rgba(0, 0, 0, 0.9);
+.viewMoreBtn:hover {
+  background-color: #dedede;
 }
 
 /* 368px */

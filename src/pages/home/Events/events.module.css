@@ -16,6 +16,7 @@
   font-family: "DM Sans";
   font-weight: 900;
   color: #231f20;
+  cursor: default;
 }
 
 .eventCard {
@@ -26,6 +27,7 @@
   background-color: white;
   border: 1px solid #e4e4e4;
   border-radius: 0.75rem;
+  cursor: default;
 }
 
 .eventDetailsContainer {
@@ -88,6 +90,10 @@
   font-weight: 700;
   cursor: pointer;
   transition: all 0.3s ease;
+}
+
+.button:hover{
+  background-color: #dedede;
 }
 
 .button img {

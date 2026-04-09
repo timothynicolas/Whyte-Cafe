@@ -9,7 +9,7 @@ import angleUp from "../assets/angleUp.svg";
 import { useState } from "react";
 
 export function StoreHours() {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(true);
   const toggle = () => setOpen((prev) => !prev);
   return (
     <div className={styles.container}>
@@ -41,7 +41,7 @@ export function StoreHours() {
             <div className={styles.hoursContainer} onClick={toggle}>
               <img src={clockIcon} />
               <p>Closed. Opens 10 AM</p>
-              <img src={open? angleUp : angleDown} />
+              <img className={styles.angle} src={open? angleUp : angleDown} />
               {/* <p>{open ? "Open" : "Closed"}</p> */}
             </div>
             <div

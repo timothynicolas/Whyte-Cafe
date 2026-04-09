@@ -1,0 +1,32 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.hr {
+  height: 1px;
+  width: 100%;
+  border: none;
+  background-color: #231f20;
+}
+
+.footerText {
+  color: rgba(0, 0, 0, 0.7);
+  cursor: default;
+}
+
+.socialLinkContainer {
+  display: flex;
+  gap: 1rem;
+}
+
+.socialLinkContainer img {
+  cursor: pointer;
+}
+
+.socialLink {
+  width: 2.25rem;
+  height: auto;
+}

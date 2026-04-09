@@ -17,17 +17,20 @@
   font-size: clamp(1.728rem, 1.4736rem + 1.272vw, 3rem);
   font-weight: 900;
   color: #231f20;
+  cursor: default;
 }
 
 .subheader {
   display: none;
   font-size: 1.725rem;
+  cursor: default;
 }
 
 .content {
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
+  cursor: default;
 }
 
 .image {
@@ -56,6 +59,9 @@
   gap: 0.5rem;
 }
 
+.angle{
+  cursor: pointer;
+}
 .hoursContent {
   display: flex;
   gap: 1rem;
