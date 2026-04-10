@@ -1,19 +1,33 @@
+import { Link, NavLink } from "react-router";
+
 import "./navbar.css";
 
 import hamburgerIcon from "../../assets/navbar/hamburger-icon.svg";
 import UtensilIcon from "../../assets/hero/utensil.svg";
 import whyteLogo from "../../assets/WhyteLogo.svg";
+import { useState } from "react";
 
 export function Navbar() {
+  const [isOpen, setIsOpen] = useState(false);
+  const closeSidebar = () => setIsOpen(false);
+
   return (
     <div className="navbar">
       <div className="navbar-left">
-        <img className="navbar-logo" src={whyteLogo} alt="whyte cafe logo" />
+        <NavLink to="/">
+          <img className="navbar-logo" src={whyteLogo} alt="whyte cafe logo" />
+        </NavLink>
       </div>
       <div className="navbar-btn-container">
-        <button className="nav-btn">Home</button>
-        <button className="nav-btn">Menu</button>
-        <button className="nav-btn">Catering</button>
+        <NavLink to="/home">
+          <button className="nav-btn">Home</button>
+        </NavLink>
+        <NavLink to="/menu">
+          <button className="nav-btn">Menu</button>
+        </NavLink>
+        <NavLink to="/catering">
+          <button className="nav-btn">Catering</button>
+        </NavLink>
       </div>
       <div className="navbar-right">
         <img className="hamburger-btn" src={hamburgerIcon} />
