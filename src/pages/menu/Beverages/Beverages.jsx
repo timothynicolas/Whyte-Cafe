@@ -1,3 +1,5 @@
+import { Link } from "react-router";
+
 import styles from "./beverages.module.css";
 
 import bev1 from "../assets/beverage1.png";
@@ -14,30 +16,30 @@ export function Beverages() {
       
 
       <div className={styles.cardsContainer}>
-        <div className={styles.latestCreationCard}>
+        <Link to="/menu/coffees" className={styles.latestCreationCard}>
           <img src={bev1} />
           <div className={styles.productDetails}>
             <p className={styles.productName}>Coffees</p>
           </div>
-        </div>
-        <div className={styles.latestCreationCard}>
+        </Link>
+        <Link to="/menu/non-coffees" className={styles.latestCreationCard}>
           <img src={bev2} />
           <div className={styles.productDetails}>
-            <p className={styles.productName}>Non-Coffee</p>
+            <p className={styles.productName}>Non-Coffees</p>
           </div>
-        </div>
-        <div className={styles.latestCreationCard}>
+        </Link>
+        <Link to="/menu/teas" className={styles.latestCreationCard}>
           <img src={bev3} />
           <div className={styles.productDetails}>
             <p className={styles.productName}>Teas</p>
           </div>
-        </div>
-        <div className={styles.latestCreationCard}>
+        </Link>
+        <Link to="/menu/refreshers" className={styles.latestCreationCard}>
           <img src={bev4} />
           <div className={styles.productDetails}>
             <p className={styles.productName}>Refreshers</p>
           </div>
-        </div>
+        </Link>
       </div>
       
     </div>

@@ -10,7 +10,7 @@ import xmark from "./assets/xmark.svg";
 import home from "./assets/home.svg";
 import utensil from "./assets/utensil.svg";
 import bell from "./assets/bell-concierge.svg";
-// import xmark from "./assets/xmark.svg";
+
 import { useState } from "react";
 
 export function Navbar() {
