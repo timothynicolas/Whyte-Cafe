@@ -1,6 +1,7 @@
 .main-container{
   display: flex;
   flex-direction: column;
-  gap: 1.875rem;
+  /* gap: 1.875rem; */
+  gap: clamp(1.25rem, 4vw, 2rem);
   /* background-color: red; */
 }
