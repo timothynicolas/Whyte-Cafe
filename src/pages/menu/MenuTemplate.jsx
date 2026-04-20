@@ -25,11 +25,12 @@ export function MenuTemplate({ title, products }) {
   };
 
   const [activeTag, setActiveTag] = useState("All");
+  const [searchQuery, setSearchQuery] = useState("");
 
-  const filteredProducts =
-    activeTag === "All"
-      ? products
-      : products.filter((p) => p.tag === activeTag);
+  const filteredProducts = products
+    .filter((p) => activeTag === "All" || p.tag === activeTag)
+    .filter((p) => p.name.toLowerCase().includes(searchQuery.toLowerCase()));
+
   return (
     <>
       <div className={styles.headerContainer}>
@@ -45,6 +46,8 @@ export function MenuTemplate({ title, products }) {
           <input
             placeholder="Looking for something?"
             className={styles.searchInput}
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
           />
         </div>
         <div className={styles.tagContainer}>
@@ -63,15 +66,17 @@ export function MenuTemplate({ title, products }) {
       </div>
       <div className={styles.productsGrid}>
         {filteredProducts.map((product) => (
-          <div className={styles.latestCreationCard}>
+          <div className={styles.productCard}>
             <img src={product.image} />
             <div className={styles.productDetails}>
               <p className={styles.productName}>{product.name}</p>
-              
+
               <p className={styles.price}>{product.price}</p>
               {/* <div className={`${styles.tag} ${styles.mobileTag}`}>New</div> */}
             </div>
-            <div className={`${styles.tag} ${tagStyles[product.tag]}`}>{product.tag}</div>
+            <div className={`${styles.tag} ${tagStyles[product.tag]}`}>
+              {product.tag}
+            </div>
           </div>
         ))}
       </div>

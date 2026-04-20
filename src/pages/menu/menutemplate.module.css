@@ -86,25 +86,25 @@
 
 /* FAHHHHHH */
 
-.latestCreationCard {
+.productCard {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1rem;
   background-color: white;
   border-radius: 0.75rem;
-  padding: 0.75rem;
+  padding: clamp(0.75rem, 0.75rem + 0.75vw, 1.5rem);
+  /* padding: .75rem; */
   border: 1px solid #e4e4e4;
-  /* border: 1px solid red; */
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
-.latestCreationCard:hover {
+.productCard:hover {
   border: 1px solid #a4a4a4;
 }
 
-.latestCreationCard img {
+.productCard img {
   height: 7.19rem;
 }
 
