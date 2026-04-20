@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 import styles from "./menutemplate.module.css";
 
@@ -33,10 +34,10 @@ export function MenuTemplate({ title, products }) {
     <>
       <div className={styles.headerContainer}>
         <h1 className={styles.header}>{title}</h1>
-        <span className={styles.backBtn}>
+        <Link to="/menu" className={styles.backBtn}>
           <img src={backIcon} />
           Back to Menu
-        </span>
+        </Link>
       </div>
       <div className={styles.searchContainer}>
         <div className={styles.searchBar}>

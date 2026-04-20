@@ -1,4 +1,4 @@
-import { Link, NavLink } from "react-router";
+import { Link } from "react-router";
 
 import "./navbar.css";
 
@@ -21,24 +21,24 @@ export function Navbar() {
     <>
       <div className="navbar">
         <div className="navbar-left">
-          <NavLink to="/">
+          <Link to="/">
             <img
               className="navbar-logo"
               src={whyteLogo}
               alt="whyte cafe logo"
             />
-          </NavLink>
+          </Link>
         </div>
         <div className="navbar-btn-container">
-          <NavLink to="/home">
+          <Link to="/home">
             <button className="nav-btn">Home</button>
-          </NavLink>
-          <NavLink to="/menu">
+          </Link>
+          <Link to="/menu">
             <button className="nav-btn">Menu</button>
-          </NavLink>
-          <NavLink to="/catering">
+          </Link>
+          <Link to="/catering">
             <button className="nav-btn">Catering</button>
-          </NavLink>
+          </Link>
         </div>
         <div className="navbar-right">
           <img
@@ -72,32 +72,32 @@ export function Navbar() {
           </div>
 
           <nav className="sidebar-nav">
-            <NavLink to="/home" className="sidebar-link" onClick={closeSidebar}>
+            <Link to="/home" className="sidebar-link" onClick={closeSidebar}>
               <img src={home} /> Home
-            </NavLink>
-            <NavLink to="/menu" className="sidebar-link" onClick={closeSidebar}>
+            </Link>
+            <Link to="/menu" className="sidebar-link" onClick={closeSidebar}>
               <img src={utensil} /> Menu
-            </NavLink>
-            <NavLink
+            </Link>
+            <Link
               to="/catering"
               className="sidebar-link"
               onClick={closeSidebar}
             >
               <img src={bell} /> Catering
-            </NavLink>
+            </Link>
           </nav>
         </div>
 
         {/* BUTTON CONTAINER */}
         <div className="sidebar-btn-container">
-          <NavLink to="/menu" className="sidebar-cta-btn" onClick={closeSidebar}>
+          <Link to="/menu" className="sidebar-cta-btn" onClick={closeSidebar}>
             View Menu
             <img src={UtensilIcon} alt="utensil icon" />
-          </NavLink>
-          <NavLink to="/catering" className="sidebar-secondary-btn" onClick={closeSidebar}>
+          </Link>
+          <Link to="/catering" className="sidebar-secondary-btn" onClick={closeSidebar}>
             Book Catering
             <img src={bell} alt="utensil icon" />
-          </NavLink>
+          </Link>
         </div>
       </div>
     </>
