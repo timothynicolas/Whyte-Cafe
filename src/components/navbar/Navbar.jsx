@@ -47,10 +47,10 @@ export function Navbar() {
             onClick={() => setIsOpen(true)}
             alt="open menu"
           />
-          <button className="nav-cta-btn">
+          <Link to="/menu" className="nav-cta-btn">
             View Menu
             <img src={UtensilIcon} alt="utensil icon" />
-          </button>
+          </Link>
         </div>
       </div>
 
