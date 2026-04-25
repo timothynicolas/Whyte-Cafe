@@ -84,8 +84,6 @@
   gap: 1.25rem;
 }
 
-/* FAHHHHHH */
-
 .productCard {
   display: flex;
   flex-direction: column;
@@ -128,29 +126,43 @@
 
 .price {
   font-size: 0.833rem;
+  font-size: clamp(0.833rem, 0.7996rem + 0.16700000000000004vw, 1rem);
   font-weight: 700;
   color: rgba(0, 0, 0, 0.7);
 }
-
-
 
 .tag {
   position: absolute;
   display: inline-flex;
   align-self: flex-start;
   border-radius: 50px;
-  padding-inline: .75rem;
+  padding-inline: 0.75rem;
   padding-block: 0.25rem;
   font-size: 0.833rem;
 }
 
-.bestSeller { background-color: #d6f5d5; color: #145214; }
-.favorite   { background-color: #ffd6e7; color: #661a33; }
-.limited    { background-color: #fff5cc; color: #665200; }
-.recommended{ background-color: #ffe0cc; color: #663d1a; }
-.new        { background-color: #cce6fe; color: #1a3d66; }
+.bestSeller {
+  background-color: #d6f5d5;
+  color: #145214;
+}
+.favorite {
+  background-color: #ffd6e7;
+  color: #661a33;
+}
+.limited {
+  background-color: #fff5cc;
+  color: #665200;
+}
+.recommended {
+  background-color: #ffe0cc;
+  color: #663d1a;
+}
+.new {
+  background-color: #cce6fe;
+  color: #1a3d66;
+}
 
-/* FAHHH TAPOS NA */
+
 
 /* 640px */
 @media (min-width: 40rem) {

@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { Modal } from "../../components/modal/Modal";
 
 import styles from "./menutemplate.module.css";
 
@@ -24,12 +25,20 @@ export function MenuTemplate({ title, products }) {
     Recommended: styles.recommended,
   };
 
+  const [selectedProduct, setSelectedProduct] = useState(null);
+
   const [activeTag, setActiveTag] = useState("All");
   const [searchQuery, setSearchQuery] = useState("");
 
   const filteredProducts = products
     .filter((p) => activeTag === "All" || p.tag === activeTag)
     .filter((p) => p.name.toLowerCase().includes(searchQuery.toLowerCase()));
+
+  useEffect(() => {
+    if (selectedProduct) document.body.style.overflow = "hidden";
+    else document.body.style.overflow = "";
+    return () => (document.body.style.overflow = "");
+  }, [selectedProduct]);
 
   return (
     <>
@@ -66,13 +75,16 @@ export function MenuTemplate({ title, products }) {
       </div>
       <div className={styles.productsGrid}>
         {filteredProducts.map((product) => (
-          <div className={styles.productCard}>
+          <div
+            className={styles.productCard}
+            key={product.id}
+            onClick={() => setSelectedProduct(product)}
+          >
             <img src={product.image} />
             <div className={styles.productDetails}>
               <p className={styles.productName}>{product.name}</p>
 
               <p className={styles.price}>{product.price}</p>
-              {/* <div className={`${styles.tag} ${styles.mobileTag}`}>New</div> */}
             </div>
             <div className={`${styles.tag} ${tagStyles[product.tag]}`}>
               {product.tag}
@@ -80,6 +92,13 @@ export function MenuTemplate({ title, products }) {
           </div>
         ))}
       </div>
+      {selectedProduct && (
+        <Modal
+          selectedProduct={selectedProduct}
+          onClose={() => setSelectedProduct(null)}
+          tagStyles={tagStyles}
+        />
+      )}
     </>
   );
 }
