@@ -162,7 +162,31 @@
   color: #1a3d66;
 }
 
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
 
+.emptyTitle {
+  font-size: 1rem;
+  font-size: clamp(1rem, 0.96rem + 0.19999999999999996vw, 1.2rem);
+  font-weight: bold;
+}
+
+.emptyMsg {
+  font-size: 0.833rem;
+  font-size: clamp(0.833rem, 0.7996rem + 0.16700000000000004vw, 1rem);
+  text-align: center;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.emptyState img {
+  
+  height: clamp(14rem, 12.675rem + 6.625vw, 20.625rem);
+}
 
 /* 640px */
 @media (min-width: 40rem) {

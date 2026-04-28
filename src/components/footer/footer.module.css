@@ -13,6 +13,8 @@
 }
 
 .footerText {
+  font-size: 0.833rem;
+  font-size: clamp(0.833rem, 0.7996rem + 0.16700000000000004vw, 1rem);
   color: rgba(0, 0, 0, 0.7);
   cursor: default;
 }

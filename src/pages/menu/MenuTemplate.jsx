@@ -6,6 +6,7 @@ import styles from "./menutemplate.module.css";
 
 import backIcon from "./assets/backIcon.svg";
 import searchIcon from "./assets/searchIcon.svg";
+import searchSvg from "./assets/searchSvg.svg";
 
 export function MenuTemplate({ title, products }) {
   const tags = [
@@ -80,7 +81,7 @@ export function MenuTemplate({ title, products }) {
             key={product.id}
             onClick={() => setSelectedProduct(product)}
           >
-            <img src={product.image} />
+            <img src={product.image} alt={product.name} />
             <div className={styles.productDetails}>
               <p className={styles.productName}>{product.name}</p>
 
@@ -92,6 +93,13 @@ export function MenuTemplate({ title, products }) {
           </div>
         ))}
       </div>
+      {filteredProducts.length === 0 && (
+        <div className={styles.emptyState}>
+          <img src={searchSvg}/>
+          <p className={styles.emptyTitle}>No Results Found</p>
+          <p className={styles.emptyMsg}>Try a different search or tag — we promise we have good stuff!</p>
+        </div>
+      )}
       {selectedProduct && (
         <Modal
           selectedProduct={selectedProduct}
