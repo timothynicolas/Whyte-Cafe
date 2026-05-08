@@ -77,6 +77,11 @@
   gap: 1rem;
 }
 
+.today{
+  color: black;
+  /* font-weight: 700; */
+}
+
 .timeContainer {
   display: flex;
   flex-direction: column;
