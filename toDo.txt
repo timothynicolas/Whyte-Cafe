@@ -1,7 +1,9 @@
+MOT
 - Fix landing page hero section
 - make modal for home page
 - make catering page
-- make store hours interactive with the current display
 - make "What's Brewing" section dynamic based if there are no upcoming/current events
+
+ICA 
 - buttons in home page interactive
 - make a 404 page

@@ -122,6 +122,30 @@
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15); */
 }
 
+/* TAGS */
+
+
+.bestSeller {
+  background-color: #d6f5d5;
+  color: #145214;
+}
+.favorite {
+  background-color: #ffd6e7;
+  color: #661a33;
+}
+.limited {
+  background-color: #fff5cc;
+  color: #665200;
+}
+.recommended {
+  background-color: #ffe0cc;
+  color: #663d1a;
+}
+.new {
+  background-color: #cce6fe;
+  color: #1a3d66;
+}
+
 /* 368px */
 @media (min-width: 23rem) {
 }
