@@ -3,7 +3,7 @@ MOT
 - make modal for home page
 - make catering page
 - make "What's Brewing" section dynamic based if there are no upcoming/current events
+- modal for "what's brewing section"
 
 ICA 
-- buttons in home page interactive
 - make a 404 page

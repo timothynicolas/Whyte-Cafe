@@ -1,4 +1,6 @@
+
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { Modal } from "../../../components/modal/Modal";
 
 import styles from "./latest-creation.module.css";
@@ -83,9 +85,9 @@ export function LatestCreation() {
           ))}
         </div>
 
-        <button className={styles.viewMoreBtn}>
+        <Link to="/menu" className={styles.viewMoreBtn}>
           View More <img src={arrow} />
-        </button>
+        </Link>
       </div>
       {selectedProduct && (
         <Modal

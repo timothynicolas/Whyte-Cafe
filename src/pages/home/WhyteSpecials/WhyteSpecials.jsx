@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 import styles from "./whyte-specials.module.css";
 
 import product1 from "../../../assets/sample-products/product4.png";
@@ -65,9 +67,9 @@ export function WhyteSpecials() {
           <div className={styles.limited}>Limited</div>
         </div>
       </div>
-      <button className={styles.viewMoreBtn}>
+      <Link to="/menu" className={styles.viewMoreBtn}>
         View More <img src={arrow} />
-      </button>
+      </Link>
     </div>
   );
 }
