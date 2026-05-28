@@ -1,9 +1,13 @@
-MOT
+LANDING
 - Fix landing page hero section
+
+HOME
 - make modal for home page
-- make catering page
 - make "What's Brewing" section dynamic based if there are no upcoming/current events
+- make catering page
+
+CATERING 
 - modal for "what's brewing section"
 
-ICA 
+404
 - make a 404 page
