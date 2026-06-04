@@ -1,11 +1,16 @@
 LANDING
-- Fix landing page hero section
+• Fix landing page hero section
 
 HOME
-- make "What's Brewing" section dynamic based if there are no upcoming/current events
+• make "What's Brewing" section dynamic based if there are no upcoming/current events
 
 CATERING 
-- make catering page
+• make catering page
+• form validation
+
 
 404
-- make a 404 page
+• make a 404 page
+
+NAVBAR
+• sticky to top
