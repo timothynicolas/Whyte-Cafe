@@ -1,0 +1,139 @@
+.main-container {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1.25rem, 4vw, 2rem);
+}
+
+.contentContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* HEADER */
+
+.headerContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.header {
+  font-family: "DM Sans";
+  font-size: clamp(1.728rem, 1.4736rem + 1.272vw, 3rem);
+  font-weight: 900;
+  color: #231f20;
+}
+
+.subheader {
+  font-size: clamp(1rem, 0.9125rem + 0.4375vw, 1.4375rem);
+  color: rgba(0, 0, 0, 0.7);
+}
+
+/* PROGRESS BAR */
+
+.progressBar {
+  width: 100%;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.bar {
+  flex: 1;
+  height: 0.5rem;
+  background-color: #e3e3e3;
+  border-radius: 1.25rem;
+}
+
+.active {
+  background-color: #231f20;
+}
+
+/* FORMS */
+
+.formContainer {
+  display: flex;
+  gap: .75rem;
+  flex-direction: column;
+}
+
+.fieldContainer {
+  display: flex;
+  gap: .25rem;
+  flex-direction: column;
+  flex: 1;
+}
+
+.huh{
+  display: flex;
+  gap: 1.25rem;
+
+}
+
+.fieldWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  border: 1.5px solid #e3e3e3;
+  border-radius: 0.5rem;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.fieldWrapper:focus-within {
+  border-color: #231f20;
+}
+
+/* Fix react-datepicker wrapper not stretching */
+.fieldWrapper :global(.react-datepicker-wrapper) {
+  width: 100%;
+}
+
+.field {
+  width: 100%;
+  font-family: "DM Sans", sans-serif;
+  font-size: 1rem;
+  padding: 1rem 1.25rem;
+  border: none;
+  border-radius: 0.5rem;
+  color: #231f20;
+  background-color: transparent;
+  outline: none;
+  cursor: pointer;
+  flex-grow: 1;
+}
+
+.fieldIcon {
+  position: absolute;
+  right: 1.25rem;
+  color: #231f20;
+  pointer-events: none;
+}
+
+.field[type="time"]::-webkit-calendar-picker-indicator {
+  display: none;
+}
+
+.viewMoreBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #242021;
+  border: none;
+  color: white;
+  padding-inline: 1.25rem;
+  padding-block: 1rem;
+  font-size: 1rem;
+  font-family: "DM Sans";
+  border-radius: 50px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.viewMoreBtn:hover {
+  background-color: #dedede;
+  /* transform: scale(1.03);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15); */
+}
