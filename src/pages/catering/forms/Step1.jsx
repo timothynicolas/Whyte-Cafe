@@ -3,10 +3,11 @@ import DatePicker from "react-datepicker";
 
 import styles from "../catering.module.css";
 
-import calendar from "../../../assets/catering/calendar.svg";
-import people from "../../../assets/catering/people.svg";
-import clock from "../../../assets/catering/clock.svg";
-import glass from "../../../assets/catering/glass.svg";
+// import calendar from "../../../assets/catering/calendar.svg";
+import CalendarIcon from "../../../assets/catering/calendar.svg?react";
+import PeopleIcon from "../../../assets/catering/people.svg?react";
+import ClockIcon from "../../../assets/catering/clock.svg?react";
+import GlassIcon from "../../../assets/catering/glass.svg?react";
 
 export function Step1({ formData, onChange }) {
   return (
@@ -27,7 +28,7 @@ export function Step1({ formData, onChange }) {
             dateFormat="MM/dd/yyyy"
           />
 
-          <img src={calendar} alt="Calendar" className={styles.fieldIcon} />
+          <CalendarIcon className={`${styles.fieldIcon} ${formData.eventDate ? styles.iconFilled : ""}`} />
         </div>
       </div>
 
@@ -49,7 +50,7 @@ export function Step1({ formData, onChange }) {
               className={styles.field}
             />
 
-            <img src={clock} alt="Clock" className={styles.fieldIcon} />
+            <ClockIcon className={`${styles.fieldIcon} ${formData.startTime ? styles.iconFilled : ""}`} />
           </div>
         </div>
 
@@ -69,7 +70,7 @@ export function Step1({ formData, onChange }) {
               className={styles.field}
             />
 
-            <img src={clock} alt="Clock" className={styles.fieldIcon} />
+            <ClockIcon className={`${styles.fieldIcon} ${formData.endTime ? styles.iconFilled : ""}`} />
           </div>
         </div>
       </div>
@@ -89,11 +90,7 @@ export function Step1({ formData, onChange }) {
             className={styles.field}
           />
 
-          <img
-            src={people}
-            alt="group of people"
-            className={styles.fieldIcon}
-          />
+          <PeopleIcon className={`${styles.fieldIcon} ${formData.guestCount ? styles.iconFilled : ""}`} />
         </div>
       </div>
       {/* EVENT TYPE */}
@@ -111,7 +108,7 @@ export function Step1({ formData, onChange }) {
             className={styles.field}
           />
 
-          <img src={glass} alt="Champagne Glass" className={styles.fieldIcon} />
+          <GlassIcon className={`${styles.fieldIcon} ${formData.eventType ? styles.iconFilled : ""}`} />
         </div>
       </div>
     </>
