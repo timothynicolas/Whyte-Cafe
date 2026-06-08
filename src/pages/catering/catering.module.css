@@ -1,5 +1,6 @@
 .main-container {
   display: flex;
+  justify-content: center;
   flex-direction: column;
   gap: clamp(1.25rem, 4vw, 2rem);
 }
@@ -8,6 +9,9 @@
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  max-width: 32.5rem;
+  width: 100%;
+  margin-inline: auto; /* this does the centering */
 }
 
 /* HEADER */
@@ -59,12 +63,17 @@
 
 .fieldContainer {
   display: flex;
-  gap: 0.25rem;
+  gap: .5rem;
   flex-direction: column;
   flex: 1;
 }
 
-.huh {
+label {
+  display: flex;
+  gap: 6px;
+}
+
+.timeContainer {
   display: flex;
   gap: 1.25rem;
 }
@@ -72,6 +81,7 @@
 .fieldWrapper {
   position: relative;
   display: flex;
+  /* align-items: center; */
   align-items: center;
   border: 1px solid #e3e3e3;
   border-radius: 0.5rem;
@@ -92,7 +102,7 @@
   width: 100%;
   font-family: "DM Sans", sans-serif;
   font-size: 1rem;
-  padding: 1rem 1.25rem 1rem 3rem;
+  padding: 1rem 1.25rem;
   border: none;
   border-radius: 0.5rem;
   color: #231f20;
@@ -100,36 +110,24 @@
   outline: none;
   cursor: pointer;
   flex-grow: 1;
-}
 
-.fieldIcon {
-  position: absolute;
-  left: 1.25rem;
-  top: 1rem;
-  /* fill: #231f20; */
-  color: rgba(0, 0, 0, 0.3); /* matches your original */
-  pointer-events: none;
+  /* Add these */
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
 }
 
 .field:has(option[value=""]:checked) {
   color: rgba(0, 0, 0, 0.7);
 }
 
-.fieldWrapper:focus-within .fieldIcon {
-  color: #231f20;
-}
-
-.iconFilled {
-  color: #231f20 !important;
-}
-
 .field[type="time"]::-webkit-calendar-picker-indicator {
   display: none;
 }
 
-.stepBtnContainer{
+.stepBtnContainer {
   display: flex;
-  gap: .75rem;
+  gap: 0.75rem;
   /* border: 1px solid red; */
 }
 

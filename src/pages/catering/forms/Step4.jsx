@@ -7,6 +7,7 @@ export function Step4({ formData, onChange }) {
     <>
       <div className={styles.fieldContainer}>
         <label>
+          <MessageIcon />
           Message/Additional Request
         </label>
 
@@ -17,10 +18,7 @@ export function Step4({ formData, onChange }) {
             onChange={(e) => onChange("message", e.target.value)}
             placeholder="e.g., We’d like to include a small dessert bar"
             className={styles.field}
-          />
-
-          <MessageIcon
-            className={`${styles.fieldIcon} ${formData.message ? styles.iconFilled : ""}`}
+            style={{"minHeight": "120px"}}
           />
         </div>
       </div>

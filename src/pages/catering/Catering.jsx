@@ -14,7 +14,7 @@ import backArrow from "../../assets/catering/back-arrow.svg";
 import paperAirplane from "../../assets/catering/paper-airplane.svg";
 
 export function Catering() {
-  const [step, setStep] = useState(4);
+  const [step, setStep] = useState(2);
 
   const [formData, setFormData] = useState({
     eventDate: null,
@@ -78,8 +78,6 @@ export function Catering() {
           {step === 4 && <Step4 formData={formData} onChange={handleChange} />}
         </div>
 
-        {/* Testing */}
-        {/* {eventDate && <p>Selected Date: {eventDate.toLocaleDateString()}</p>} */}
         <div className={styles.stepBtnContainer}>
           {step >= 2 && (
             <button

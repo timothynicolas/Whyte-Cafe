@@ -10,7 +10,7 @@ export function Step2({ formData, onChange }) {
       {/* Setup Type */}
       <div className={styles.fieldContainer}>
         <label>
-          Type of Setup <span style={{ color: "red" }}>*</span>
+          <UtensilIcon/>Type of Setup <span style={{ color: "red" }}>*</span>
         </label>
 
         <div className={styles.fieldWrapper}>
@@ -27,16 +27,12 @@ export function Step2({ formData, onChange }) {
             <option>Option 3</option>
             <option>Option 4</option>
           </select>
-
-          <UtensilIcon
-            className={`${styles.fieldIcon} ${formData.setupType ? styles.iconFilled : ""}`}
-          />
         </div>
       </div>
 
       {/* PREFERRED FOOD */}
       <div className={styles.fieldContainer}>
-        <label>Preferred Dishes or Drinks</label>
+        <label><Bowlicon/> Preferred Dishes or Drinks</label>
 
         <div className={styles.fieldWrapper}>
           <textarea
@@ -44,16 +40,13 @@ export function Step2({ formData, onChange }) {
             onChange={(e) => onChange("preferredFood", e.target.value)}
             placeholder="e.g., coffee, pasta, sandwiches"
             className={styles.field}
-          />
-
-          <Bowlicon
-            className={`${styles.fieldIcon} ${formData.preferredFood ? styles.iconFilled : ""}`}
+            style={{"minHeight": "120px"}}
           />
         </div>
       </div>
       {/* DIETARY RESTRICTIONS */}
       <div className={styles.fieldContainer}>
-        <label>Dietary Restrictions</label>
+        <label><BanIcon/> Dietary Restrictions</label>
 
         <div className={styles.fieldWrapper}>
           <textarea
@@ -61,10 +54,7 @@ export function Step2({ formData, onChange }) {
             onChange={(e) => onChange("dietaryRestrictions", e.target.value)}
             placeholder="e.g., vegetarian options, no pork, no dairy"
             className={styles.field}
-          />
-
-          <BanIcon
-            className={`${styles.fieldIcon} ${formData.dietaryRestrictions ? styles.iconFilled : ""}`}
+            style={{"minHeight": "120px"}}
           />
         </div>
       </div>

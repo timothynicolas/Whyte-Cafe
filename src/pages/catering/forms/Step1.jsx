@@ -15,6 +15,7 @@ export function Step1({ formData, onChange }) {
       {/* EVENT DATE */}
       <div className={styles.fieldContainer}>
         <label>
+          <CalendarIcon />
           Event Date <span style={{ color: "red" }}>*</span>
         </label>
 
@@ -28,14 +29,15 @@ export function Step1({ formData, onChange }) {
             dateFormat="MM/dd/yyyy"
           />
 
-          <CalendarIcon className={`${styles.fieldIcon} ${formData.eventDate ? styles.iconFilled : ""}`} />
+          {/* <CalendarIcon className={`${styles.fieldIcon} ${formData.eventDate ? styles.iconFilled : ""}`} /> */}
         </div>
       </div>
 
       {/* START & END TIME */}
-      <div className={styles.huh}>
+      <div className={styles.timeContainer}>
         <div className={styles.fieldContainer}>
           <label>
+            <ClockIcon />
             Start Time <span style={{ color: "red" }}>*</span>
           </label>
 
@@ -50,12 +52,13 @@ export function Step1({ formData, onChange }) {
               className={styles.field}
             />
 
-            <ClockIcon className={`${styles.fieldIcon} ${formData.startTime ? styles.iconFilled : ""}`} />
+           
           </div>
         </div>
 
         <div className={styles.fieldContainer}>
           <label>
+            <ClockIcon />
             End Time <span style={{ color: "red" }}>*</span>
           </label>
 
@@ -70,7 +73,6 @@ export function Step1({ formData, onChange }) {
               className={styles.field}
             />
 
-            <ClockIcon className={`${styles.fieldIcon} ${formData.endTime ? styles.iconFilled : ""}`} />
           </div>
         </div>
       </div>
@@ -78,6 +80,7 @@ export function Step1({ formData, onChange }) {
       {/* NUMBER OF GUESTS */}
       <div className={styles.fieldContainer}>
         <label>
+          <PeopleIcon />
           Number of Guests <span style={{ color: "red" }}>*</span>
         </label>
 
@@ -89,13 +92,12 @@ export function Step1({ formData, onChange }) {
             placeholder="How many are attending?"
             className={styles.field}
           />
-
-          <PeopleIcon className={`${styles.fieldIcon} ${formData.guestCount ? styles.iconFilled : ""}`} />
         </div>
       </div>
       {/* EVENT TYPE */}
       <div className={styles.fieldContainer}>
         <label>
+          <GlassIcon />
           Event Type <span style={{ color: "red" }}>*</span>
         </label>
 
@@ -107,8 +109,6 @@ export function Step1({ formData, onChange }) {
             placeholder="What's the occasion?"
             className={styles.field}
           />
-
-          <GlassIcon className={`${styles.fieldIcon} ${formData.eventType ? styles.iconFilled : ""}`} />
         </div>
       </div>
     </>

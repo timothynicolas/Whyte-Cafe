@@ -4,13 +4,13 @@ import UserIcon from "../../../assets/catering/user.svg?react";
 import EmailIcon from "../../../assets/catering/email.svg?react";
 import PhoneIcon from "../../../assets/catering/mobile-phone.svg?react";
 
-
 export function Step3({ formData, onChange }) {
   return (
     <>
       {/* Full Name */}
       <div className={styles.fieldContainer}>
         <label>
+          <UserIcon />
           Full Name <span style={{ color: "red" }}>*</span>
         </label>
 
@@ -22,15 +22,12 @@ export function Step3({ formData, onChange }) {
             placeholder="Juan Dela Cruz"
             className={styles.field}
           />
-
-          <UserIcon
-            className={`${styles.fieldIcon} ${formData.fullName ? styles.iconFilled : ""}`}
-          />
         </div>
       </div>
       {/* Email */}
       <div className={styles.fieldContainer}>
         <label>
+          <EmailIcon />
           Email <span style={{ color: "red" }}>*</span>
         </label>
 
@@ -42,15 +39,12 @@ export function Step3({ formData, onChange }) {
             placeholder="Juan Dela Cruz"
             className={styles.field}
           />
-
-          <EmailIcon
-            className={`${styles.fieldIcon} ${formData.fullName ? styles.iconFilled : ""}`}
-          />
         </div>
       </div>
       {/* Phone */}
       <div className={styles.fieldContainer}>
         <label>
+          <PhoneIcon />
           Phone <span style={{ color: "red" }}>*</span>
         </label>
 
@@ -62,15 +56,8 @@ export function Step3({ formData, onChange }) {
             placeholder="Juan Dela Cruz"
             className={styles.field}
           />
-
-          <PhoneIcon
-            className={`${styles.fieldIcon} ${formData.fullName ? styles.iconFilled : ""}`}
-          />
         </div>
       </div>
-
-      
-     
     </>
   );
 }
