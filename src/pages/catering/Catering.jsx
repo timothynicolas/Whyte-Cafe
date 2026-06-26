@@ -6,6 +6,7 @@ import { Step1 } from "./forms/Step1";
 import { Step2 } from "./forms/Step2";
 import { Step3 } from "./forms/Step3";
 import { Step4 } from "./forms/Step4";
+import { CateringModal } from "../../components/cateringModal/CateringModal";
 
 import styles from "./catering.module.css";
 
@@ -13,10 +14,14 @@ import arrow from "../../assets/catering/arrow.svg";
 import backArrow from "../../assets/catering/back-arrow.svg";
 import paperAirplane from "../../assets/catering/paper-airplane.svg";
 
+// validation functions
+import { isValidEmail } from "../../utils/validation";
+
 export function Catering() {
-  const [step, setStep] = useState(2);
+  const [step, setStep] = useState(1);
 
   const [formData, setFormData] = useState({
+    // STEP 1
     eventDate: null,
     startTime: null,
     endTime: null,
@@ -27,6 +32,14 @@ export function Catering() {
     setupType: "",
     preferredFood: "",
     dietaryRestrictions: "",
+
+    //STEP 3
+    fullName: "",
+    email: "",
+    phone: "",
+
+    // STEP 4
+    message: "",
   });
 
   const handleChange = (field, value) => {
@@ -41,11 +54,16 @@ export function Catering() {
       formData.guestCount &&
       formData.eventType,
     2: formData.setupType,
-    3: formData.fullName && formData.email && formData.phone,
+    3:
+      formData.fullName &&
+      isValidEmail(formData.email) &&
+      formData.phone.length === 11,
     4: true,
   };
 
   const isComplete = stepCompletion[step];
+
+  const [showModal, setShowModal] = useState(false);
   return (
     <div className="container main-container">
       <Navbar />
@@ -74,10 +92,19 @@ export function Catering() {
         <div className={styles.formContainer}>
           {step === 1 && <Step1 formData={formData} onChange={handleChange} />}
           {step === 2 && <Step2 formData={formData} onChange={handleChange} />}
-          {step === 3 && <Step3 formData={formData} onChange={handleChange} />}
+          {step === 3 && (
+            <Step3
+              formData={formData}
+              onChange={handleChange}
+              isValidEmail={isValidEmail}
+            />
+          )}
           {step === 4 && <Step4 formData={formData} onChange={handleChange} />}
         </div>
 
+        {showModal && <CateringModal setShowModal={setShowModal} />}
+
+        {/* BACK BUTTON */}
         <div className={styles.stepBtnContainer}>
           {step >= 2 && (
             <button
@@ -90,13 +117,20 @@ export function Catering() {
             </button>
           )}
 
+          {/* NEXT/SUBMIT BUTTON */}
           <button
             className={`${styles.nextBtn} ${!isComplete ? styles.disabled : ""}`}
-            onClick={() => setStep((prevStep) => prevStep + 1)}
+            onClick={() => {
+              if (step === 4) {
+                setShowModal(true);
+              } else {
+                setStep((prevStep) => prevStep + 1);
+              }
+            }}
             disabled={!isComplete}
           >
-            {step === 4? "Submit": "Next"}
-            <img src={step === 4? paperAirplane: arrow} />
+            {step === 4 ? "Submit" : "Next"}
+            <img src={step === 4 ? paperAirplane : arrow} />
           </button>
         </div>
       </div>

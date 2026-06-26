@@ -9,6 +9,7 @@ import PeopleIcon from "../../../assets/catering/people.svg?react";
 import ClockIcon from "../../../assets/catering/clock.svg?react";
 import GlassIcon from "../../../assets/catering/glass.svg?react";
 
+const MIN_DATE = new Date(Date.now() + 7 * 24 * 60 * 60 * 1000);
 export function Step1({ formData, onChange }) {
   return (
     <>
@@ -22,8 +23,10 @@ export function Step1({ formData, onChange }) {
         <div className={styles.fieldWrapper}>
           <DatePicker
             selected={formData.eventDate}
-            onChange={(date) => onChange("eventDate", date)}
-            minDate={new Date()}
+            onChange={(date) => {
+              onChange("eventDate", date);
+            }}
+            minDate={MIN_DATE}
             placeholderText="MM/DD/YYYY"
             className={styles.field}
             dateFormat="MM/dd/yyyy"
@@ -44,15 +47,15 @@ export function Step1({ formData, onChange }) {
           <div className={styles.fieldWrapper}>
             <DatePicker
               selected={formData.startTime}
-              onChange={(time) => onChange("startTime", time)}
+              onChange={(time) => {
+                onChange("startTime", time);
+              }}
               showTimeSelect
               showTimeSelectOnly
               dateFormat="h:mm aa"
               placeholderText="00:00 AM"
               className={styles.field}
             />
-
-           
           </div>
         </div>
 
@@ -72,7 +75,6 @@ export function Step1({ formData, onChange }) {
               placeholderText="00:00 PM"
               className={styles.field}
             />
-
           </div>
         </div>
       </div>
