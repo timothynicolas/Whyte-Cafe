@@ -23,9 +23,10 @@ export function Step2({ formData, onChange }) {
               Select a setup type
             </option>
             <option>Buffet</option>
-            <option>Option 2</option>
-            <option>Option 3</option>
-            <option>Option 4</option>
+            <option>Plated/Sit-down</option>
+            <option>Family Style</option>
+            <option>Food Stations</option>
+            <option>Full Service</option>
           </select>
         </div>
       </div>
