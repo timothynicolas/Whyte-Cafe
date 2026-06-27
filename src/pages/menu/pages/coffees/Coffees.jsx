@@ -109,10 +109,12 @@ export function Coffees() {
     },
   ];
   return (
-    <div className="container main-container">
+    <>
       <Navbar />
-      <MenuTemplate title="Coffee" products={coffees} />
-      <Footer />
-    </div>
+      <div className="container main-container">
+        <MenuTemplate title="Coffee" products={coffees} />
+        <Footer />
+      </div>
+    </>
   );
 }

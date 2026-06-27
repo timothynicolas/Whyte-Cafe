@@ -5,18 +5,7 @@ HOME
 • make "What's Brewing" section dynamic based if there are no upcoming/current events
 
 CATERING 
-  • STEP 1
-  - event date has to be 1 week in advance
-  - start time and end time has to be within store hours
-  - number of guests must have a limit
-  
-  • STEP 2
-  - Fill in the options in the type of setup field instead of options 1-4
-
-  • STEP 3
-  - Email validation
-  - Phone # must not exceed 11 digits
- 
+ • STEP 4
   • bot spam prevention
   • Submit button for last step
 
