@@ -65,77 +65,84 @@ export function Catering() {
 
   const [showModal, setShowModal] = useState(false);
   return (
-    <div className="container main-container">
+    <>
       <Navbar />
+      <div className="container main-container">
+        <div className={styles.contentContainer}>
+          {/* HEADER */}
+          <div className={styles.headerContainer}>
+            <p className={styles.header}>Got an event brewing?</p>
 
-      <div className={styles.contentContainer}>
-        {/* HEADER */}
-        <div className={styles.headerContainer}>
-          <p className={styles.header}>Got an event brewing?</p>
+            <p className={styles.subheader}>
+              Tell us a bit about your event for a quote.
+            </p>
+          </div>
 
-          <p className={styles.subheader}>
-            Tell us a bit about your event for a quote.
-          </p>
-        </div>
+          {/* PROGRESS BAR */}
+          <div className={styles.progressBar}>
+            {[1, 2, 3, 4].map((b) => (
+              <div
+                key={b}
+                className={`${styles.bar} ${step >= b ? styles.active : ""}`}
+              ></div>
+            ))}
+          </div>
 
-        {/* PROGRESS BAR */}
-        <div className={styles.progressBar}>
-          {[1, 2, 3, 4].map((b) => (
-            <div
-              key={b}
-              className={`${styles.bar} ${step >= b ? styles.active : ""}`}
-            ></div>
-          ))}
-        </div>
+          {/* FORM */}
+          <div className={styles.formContainer}>
+            {step === 1 && (
+              <Step1 formData={formData} onChange={handleChange} />
+            )}
+            {step === 2 && (
+              <Step2 formData={formData} onChange={handleChange} />
+            )}
+            {step === 3 && (
+              <Step3
+                formData={formData}
+                onChange={handleChange}
+                isValidEmail={isValidEmail}
+              />
+            )}
+            {step === 4 && (
+              <Step4 formData={formData} onChange={handleChange} />
+            )}
+          </div>
 
-        {/* FORM */}
-        <div className={styles.formContainer}>
-          {step === 1 && <Step1 formData={formData} onChange={handleChange} />}
-          {step === 2 && <Step2 formData={formData} onChange={handleChange} />}
-          {step === 3 && (
-            <Step3
-              formData={formData}
-              onChange={handleChange}
-              isValidEmail={isValidEmail}
-            />
-          )}
-          {step === 4 && <Step4 formData={formData} onChange={handleChange} />}
-        </div>
+          {showModal && <CateringModal setShowModal={setShowModal} />}
 
-        {showModal && <CateringModal setShowModal={setShowModal} />}
+          {/* BACK BUTTON */}
+          <div className={styles.stepBtnContainer}>
+            {step >= 2 && (
+              <button
+                className={`${styles.backBtn}`}
+                onClick={() => setStep((prevStep) => prevStep - 1)}
+                // disabled={!isComplete}
+              >
+                <img src={backArrow} />
+                Back
+              </button>
+            )}
 
-        {/* BACK BUTTON */}
-        <div className={styles.stepBtnContainer}>
-          {step >= 2 && (
+            {/* NEXT/SUBMIT BUTTON */}
             <button
-              className={`${styles.backBtn}`}
-              onClick={() => setStep((prevStep) => prevStep - 1)}
-              // disabled={!isComplete}
+              className={`${styles.nextBtn} ${!isComplete ? styles.disabled : ""}`}
+              onClick={() => {
+                if (step === 4) {
+                  setShowModal(true);
+                } else {
+                  setStep((prevStep) => prevStep + 1);
+                }
+              }}
+              disabled={!isComplete}
             >
-              <img src={backArrow} />
-              Back
+              {step === 4 ? "Submit" : "Next"}
+              <img src={step === 4 ? paperAirplane : arrow} />
             </button>
-          )}
-
-          {/* NEXT/SUBMIT BUTTON */}
-          <button
-            className={`${styles.nextBtn} ${!isComplete ? styles.disabled : ""}`}
-            onClick={() => {
-              if (step === 4) {
-                setShowModal(true);
-              } else {
-                setStep((prevStep) => prevStep + 1);
-              }
-            }}
-            disabled={!isComplete}
-          >
-            {step === 4 ? "Submit" : "Next"}
-            <img src={step === 4 ? paperAirplane : arrow} />
-          </button>
+          </div>
         </div>
-      </div>
 
-      <Footer />
-    </div>
+        <Footer />
+      </div>
+    </>
   );
 }

@@ -8,10 +8,22 @@
 }
 
 .navbar {
+  position: sticky;
+  top: 0rem;
+  /* left:0; */
+  background-color: rgba(249, 250, 251, 0.8);
+  /* background-color: #F9FAFB; */
+  /* background-color: red; */
+  padding-inline: 2.25rem;
+  max-width: 90rem;
+  margin-inline: auto;
+  height: 70px;
+  backdrop-filter: blur(10px);
   display: flex;
   justify-content: space-between;
   align-items: center;
   /* border: 1px solid red; */
+  z-index: 998;
 }
 
 .navbar-btn-container {
@@ -57,6 +69,9 @@
 
 /* 768px */
 @media (min-width: 48rem) {
+  .navbar {
+    padding-inline: 4rem;
+  }
 }
 
 /* 1024px */
@@ -89,6 +104,9 @@
 
 /* 1280px */
 @media (min-width: 80rem) {
+  .navbar {
+    padding-inline: 6rem;
+  }
 }
 /* 1536px */
 @media (min-width: 96rem) {
@@ -110,7 +128,7 @@
   pointer-events: all;
 }
 
-.sidebar-nav-container{
+.sidebar-nav-container {
   display: flex;
   flex-direction: column;
   gap: 2.75rem;
@@ -139,12 +157,12 @@
   transform: translateX(0);
 }
 
-.sidebar-header{
+.sidebar-header {
   display: flex;
   justify-content: space-between;
 }
 
-.whyte-logo{
+.whyte-logo {
   width: 3.125rem;
 }
 
@@ -174,12 +192,11 @@
   transition: color 0.3s ease;
 }
 
-
 .sidebar-link.active {
   /* color: #302625; */
 }
 
-.sidebar-btn-container{
+.sidebar-btn-container {
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
@@ -202,13 +219,13 @@
   text-decoration: none;
 }
 
-.sidebar-secondary-btn{
+.sidebar-secondary-btn {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 0.5rem;
   border: none;
-  background-color: #EFEFEF;
+  background-color: #efefef;
   color: rgba(0, 0, 0, 0.7);
   font-weight: bold;
   font-family: "DM Sans";

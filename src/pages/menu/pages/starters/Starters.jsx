@@ -3,13 +3,14 @@
 import { Navbar } from "../../../../components/navbar/Navbar";
 import { Footer } from "../../../../components/footer/Footer";
 
-export function Starters(){
-   return (
-      <div className="container main-container" >
-        <Navbar />
+export function Starters() {
+  return (
+    <>
+      <Navbar />
+      <div className="container main-container">
         <h1>Starters</h1>
         <Footer />
       </div>
-    );
+    </>
+  );
 }
-

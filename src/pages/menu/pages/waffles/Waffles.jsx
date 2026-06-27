@@ -3,13 +3,14 @@
 import { Navbar } from "../../../../components/navbar/Navbar";
 import { Footer } from "../../../../components/footer/Footer";
 
-export function Waffles(){
-   return (
-      <div className="container main-container" >
-        <Navbar />
+export function Waffles() {
+  return (
+    <>
+      <Navbar />
+      <div className="container main-container">
         <h1>Waffles</h1>
         <Footer />
       </div>
-    );
+    </>
+  );
 }
-

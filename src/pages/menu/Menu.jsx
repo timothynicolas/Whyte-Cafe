@@ -6,11 +6,13 @@ import { Food } from "./Food/Food";
 
 export function Menu() {
   return (
-    <div className="container main-container" >
+    <>
       <Navbar />
-      <Beverages />
-      <Food />
-      <Footer />
-    </div>
+      <div className="container main-container">
+        <Beverages />
+        <Food />
+        <Footer />
+      </div>
+    </>
   );
 }

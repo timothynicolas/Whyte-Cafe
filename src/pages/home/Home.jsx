@@ -10,14 +10,16 @@ import { Footer } from "../../components/footer/Footer";
 
 export function Home() {
   return (
-    <div className="container main-container">
+    <>
       <Navbar />
-      <LatestCreation />
-      <WhyteSpecials />
-      <Reviews />
-      <Events />
-      <StoreHours />
-      <Footer />
-    </div>
+      <div className="container main-container">
+        <LatestCreation />
+        <WhyteSpecials />
+        <Reviews />
+        <Events />
+        <StoreHours />
+        <Footer />
+      </div>
+    </>
   );
 }
