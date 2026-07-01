@@ -7,12 +7,11 @@ HOME
 CATERING 
  • STEP 4
   • bot spam prevention
-  • Submit button for last step
 
 404
 • make a 404 page
 
-NAVBAR
-• sticky to top
+FOOTER
+• sticky to bottom
 
 
