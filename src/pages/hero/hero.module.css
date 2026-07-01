@@ -5,8 +5,7 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  /* border: 5px solid red; */
-  /* gap: 315px; */
+  
   overflow-y: hidden;
   overflow-x: hidden;
    padding-top: 2rem; /* optional, breathing room from navbar */

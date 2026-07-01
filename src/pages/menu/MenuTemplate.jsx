@@ -42,7 +42,7 @@ export function MenuTemplate({ title, products }) {
   }, [selectedProduct]);
 
   return (
-    <>
+    <div className={styles.menuWrapper}>
       <div className={styles.headerContainer}>
         <h1 className={styles.header}>{title}</h1>
         <Link to="/menu" className={styles.backBtn}>
@@ -107,6 +107,6 @@ export function MenuTemplate({ title, products }) {
           tagStyles={tagStyles}
         />
       )}
-    </>
+    </div>
   );
 }
