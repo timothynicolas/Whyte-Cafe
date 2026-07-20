@@ -1,5 +1,5 @@
-import { useState } from "react";
-import emailjs from "@emailjs/browser"; // CHANGE: added for form submission
+import { useState, useRef } from "react";
+import emailjs from "@emailjs/browser";
 
 import { Navbar } from "../../components/navbar/Navbar";
 import { Footer } from "../../components/footer/Footer";
@@ -43,18 +43,32 @@ export function Catering() {
     message: "",
   });
 
-  // CHANGE: moved showModal up here so all useState calls live together
   const [showModal, setShowModal] = useState(false);
-  // CHANGE: new state for submission status and error handling
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState("");
+
+  // bot protection
+  const [honeypot, setHoneypot] = useState("");
+  const formLoadTime = useRef(Date.now());
 
   const handleChange = (field, value) => {
     setFormData((prev) => ({ ...prev, [field]: value }));
   };
 
-  // CHANGE: new handler that sends form data via EmailJS
   const handleSubmit = async () => {
+    // bot check #1: honeypot field was filled
+    if (honeypot) {
+      console.warn("Bot detected via honeypot");
+      return;
+    }
+
+    // bot check #2: submitted too fast to be human
+    const elapsed = Date.now() - formLoadTime.current;
+    if (elapsed < 3000) {
+      console.warn("Bot detected via timing (submitted in", elapsed, "ms)");
+      return;
+    }
+
     setIsSubmitting(true);
     setSubmitError("");
 
@@ -150,9 +164,20 @@ export function Catering() {
             {step === 4 && (
               <Step4 formData={formData} onChange={handleChange} />
             )}
+
+            {/* honeypot field - hidden from real users, catches bots */}
+            <input
+              type="text"
+              name="website"
+              value={honeypot}
+              onChange={(e) => setHoneypot(e.target.value)}
+              className={styles.honeypot}
+              tabIndex="-1"
+              autoComplete="off"
+              aria-hidden="true"
+            />
           </div>
 
-          {/* CHANGE: show error message if EmailJS submission fails */}
           {submitError && <p className={styles.errorText}>{submitError}</p>}
 
           {showModal && <CateringModal setShowModal={setShowModal} />}
@@ -165,7 +190,7 @@ export function Catering() {
                 onClick={() => setStep((prevStep) => prevStep - 1)}
                 // disabled={!isComplete}
               >
-                <img src={backArrow} alt="" /> {/* CHANGE: added alt="" */}
+                <img src={backArrow} alt="" />
                 Back
               </button>
             )}
@@ -175,15 +200,15 @@ export function Catering() {
               className={`${styles.nextBtn} ${!isComplete ? styles.disabled : ""}`}
               onClick={() => {
                 if (step === 4) {
-                  handleSubmit(); // CHANGE: was setShowModal(true)
+                  handleSubmit();
                 } else {
                   setStep((prevStep) => prevStep + 1);
                 }
               }}
-              disabled={!isComplete || isSubmitting} // CHANGE: added isSubmitting guard
+              disabled={!isComplete || isSubmitting}
             >
-              {step === 4 ? (isSubmitting ? "Sending..." : "Submit") : "Next"} {/* CHANGE: loading label */}
-              <img src={step === 4 ? paperAirplane : arrow} alt="" /> {/* CHANGE: added alt="" */}
+              {step === 4 ? (isSubmitting ? "Sending..." : "Submit") : "Next"}
+              <img src={step === 4 ? paperAirplane : arrow} alt="" />
             </button>
           </div>
         </div>
