@@ -1,12 +1,9 @@
 HOME
 • make "What's Brewing" section dynamic based if there are no upcoming/current events
 
-CATERING 
-  • STEP 4
-  • bot spam prevention
 
-404
-• make a 404 page
+
+
 
 
 
