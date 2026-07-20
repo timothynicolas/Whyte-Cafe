@@ -181,3 +181,18 @@ label {
   /* transform: scale(1.03);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15); */
 }
+
+.honeypot {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.errorText {
+  color: #d32f2f;
+  font-size: 0.9rem;
+  text-align: center;
+  margin-top: 8px;
+}
