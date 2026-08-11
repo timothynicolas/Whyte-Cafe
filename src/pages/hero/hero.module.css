@@ -5,10 +5,10 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  
+
   overflow-y: hidden;
   overflow-x: hidden;
-   padding-top: 2rem; /* optional, breathing room from navbar */
+  padding-top: 2rem; /* optional, breathing room from navbar */
 }
 
 .textContainer {
@@ -18,7 +18,7 @@
   overflow: hidden;
   position: relative;
   z-index: 1;
-   padding-bottom: 2rem; /* just some space before the image area */
+  padding-bottom: 2rem; /* just some space before the image area */
 }
 
 .btnContainer {
@@ -61,7 +61,7 @@
 
 .heroSubtext {
   font-family: "Special Gothic Expanded One";
-  font-size: 1.75rem;
+  font-size: 1.5rem;
   color: rgba(0, 0, 0, 0.4);
   text-align: center;
   padding-inline: 2.25rem;
@@ -69,20 +69,21 @@
 
 .heroMaintext {
   font-family: "Special Gothic Expanded One";
-  font-size: 6.31rem;
+  /* font-size: 6.31rem; */
+  font-size: 5.5rem;
   /* font-size: clamp(4rem, 3.2rem + 4vw, 8rem); */
   color: #231f20;
   /* white-space: nowrap; */
   text-align: center;
   line-height: 0.85;
-  margin-inline: -2.25rem;
+  /* margin-inline: -2.25rem; */
 }
 
 .heroImg {
   position: absolute;
   /* height: 528px; */
   width: 295px;
-  bottom: 0px;
+  bottom: -70px;
   z-index: 2;
 }
 
@@ -147,9 +148,10 @@
   .heroImgWide {
     display: flex;
     position: absolute;
-    /* height: 528px; */
     width: 90vw;
     max-width: 62.125rem;
+    max-height: 55vh; /* <-- this is the fix: caps it on short viewports */
+    object-fit: contain;
     bottom: 0px;
     z-index: 0;
   }
@@ -168,11 +170,21 @@
   .container {
     padding-inline: 6rem;
   }
+
+  .heroMaintext {
+    /* font-size: clamp(4rem, 3.2rem + 4vw, 8rem); */
+    font-size: 6.5rem;
+  }
 }
 
 /* === 1536px === */
 @media (min-width: 96rem) {
   .container {
     padding-inline: 6rem;
+  }
+
+  .heroMaintext {
+    /* font-size: clamp(4rem, 3.2rem + 4vw, 8rem); */
+    font-size: 8rem;
   }
 }
