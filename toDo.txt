@@ -1,6 +1,8 @@
 HOME
 • make "What's Brewing" section dynamic based if there are no upcoming/current events
 
+LOADING SCREEN
+• add loading screen?
 
 
 
