@@ -1,6 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 
-import { ScrollToTop } from "./components/ScrollToTop/ScrollToTop";
+import { ScrollToTop } from "./components/scrollToTop/ScrollToTop";
 import { LoadingScreen } from "./pages/loading/LoadingScreen";
 import { Home } from "./pages/home/Home";
 import { Hero } from "./pages/hero/Hero";
